@@ -7,6 +7,12 @@ html {
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
 }
 
 li {
@@ -30,4 +36,241 @@ section {
 
 :root {
     --main-color: #fff;
+}
+/* =================================================HEADER================================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 40px;
+    background: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #18a5a7;
+    text-decoration: none;
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-link {
+    cursor: pointer;
+    color: #000;
+    transition: 0.2s;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.navbar-link:hover {
+    color: #777;
+}
+
+.navbar-link:active {
+    scale: 0.9;
+}
+
+.underLine {
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    width: 100%; 
+    background-color: #777; 
+    transition: 0.1s;
+    opacity: 0;
+}
+/* =================================================MODE================================================= */
+.switch {
+    font-size: 12.75px; /* 17px * 3/4 */
+    position: relative;
+    display: inline-block;
+    width: 48px; /* 64px * 3/4 */
+    height: 25.5px; /* 34px * 3/4 */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px; /* Giữ lại giá trị này cho tỷ lệ chính xác */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22.5px; /* 30px * 3/4 */
+    width: 22.5px; /* 30px * 3/4 */
+    border-radius: 16.875px; /* 20px * 3/4 */
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+}
+
+.sun svg {
+    position: absolute;
+    top: 4.5px; /* 6px * 3/4 */
+    left: 27px; /* 36px * 3/4 */
+    z-index: 1;
+    width: 18px; /* 24px * 3/4 */
+    height: 18px; /* 24px * 3/4 */
+}
+
+.moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 3.75px; /* 5px * 3/4 */
+    left: 3.75px; /* 5px * 3/4 */
+    z-index: 1;
+    width: 18px; /* 24px * 3/4 */
+    height: 18px; /* 24px * 3/4 */
+}
+
+/* .switch:hover */.sun svg {
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .switch:hover */.moon svg {
+    animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.input:checked + .slider {
+    background-color: #183153;
+}
+
+.input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+    transform: translateX(22.5px); /* 30px * 3/4 */
+}
+/* =================================================HERO================================================= */
+.hero {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__left {
+    width: 30%;
+    font-size: 2rem;
+}
+
+.hero__right {
+    display: flex;
+    width: 65%;
+    margin-left: 20px;
+}
+
+.hero__heading {
+    font-size: 3rem;
+}
+
+.hero__heading span {
+    color: #18a5a7;
+}
+
+.hero__desc {
+    margin: 10px 0;
+}
+
+.hero__social i {
+    font-size: 3rem;
+    color: #000;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.hero__social i:hover {
+    scale: 1.1;
+    color: #5ce1e6;
+}
+
+.hero__social i:active {
+    scale: 0.8;
+}
+
+.panel {
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    flex: 2;
+    margin: 5px;
+    position: relative;
+    transition: 0.8s;
+}
+
+.panel h3 {
+    font-size: 24px;
+    margin: 0;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.panel.active {
+    flex: 10;
+    border-radius: 20px;
+}
+
+.panel.active h3 {
+    opacity: 1;
 }
