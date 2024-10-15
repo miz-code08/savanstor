@@ -44,7 +44,9 @@ section {
     align-items: center;
     width: 100%;
     padding: 25px 40px;
-    background: #ccc;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: #cccccc4d;
     position: fixed;
     top: 0;
     left: 0;
@@ -68,7 +70,7 @@ section {
     cursor: pointer;
     color: #000;
     transition: 0.2s;
-    font-size: 1.8rem;
+    font-size: 2.25rem;
     position: relative;
 }
 
@@ -88,6 +90,38 @@ section {
     background-color: #777; 
     transition: 0.1s;
     opacity: 0;
+}
+
+.menu {
+    /* display: none; */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    top: 90px;
+    z-index: 2;
+
+    font-size: 2.5rem;
+    padding: 30px;
+    border-bottom-left-radius: 30px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: #ff47474d;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    /* transition: 0.3s; */
+}
+
+.fa-bars,
+.fa-xmark {
+    display: none;
+    cursor: pointer;
+    font-size: 3rem;
 }
 /* =================================================MODE================================================= */
 .switch {
@@ -223,13 +257,13 @@ section {
 }
 
 .hero__desc {
-    margin: 10px 0;
+    margin: 0px 0;
 }
 
 .hero__social i {
     font-size: 3rem;
     color: #000;
-    margin-left: 10px;
+    margin: 20px 10px 0 0 ;
     transition: 0.3s;
 }
 
@@ -253,7 +287,7 @@ section {
     flex: 2;
     margin: 5px;
     position: relative;
-    transition: 0.8s;
+    transition: 0.7s;
 }
 
 .panel h3 {
@@ -263,7 +297,7 @@ section {
     left: 20px;
     bottom: 10px;
     opacity: 0;
-    transition: 0.8s;
+    transition: 0.7s;
 }
 
 .panel.active {
