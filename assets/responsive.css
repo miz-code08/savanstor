@@ -1,7 +1,7 @@
 /* mobile */
 @media (max-width: 767.98px) {
     .container {
-        width: 100%;
+        min-width: calc(100% - 12px);
     }
 
     .navbar-list,
@@ -32,6 +32,9 @@
         margin-top: 60px;
     }
 
+    .member-link {
+        min-width: 100%;
+    }
 }
 /* tablet */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -52,6 +55,14 @@
     .panel:nth-last-of-type(1),
     .panel:nth-last-of-type(2) {
         display: none;
+    }
+
+    .member__heading {
+        font-size: 2.5rem;
+    }
+
+    .member__desc {
+        font-size: 2rem;
     }
 }
 
