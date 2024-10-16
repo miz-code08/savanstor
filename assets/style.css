@@ -331,10 +331,10 @@ img {
 }
 
 .member-link {
-    min-width: 33%;
+    min-width: 32%;
     cursor: pointer;
     translate: 0%;
-    transition: 0.5s;
+    transition: 0.8s;
     display: block;
 }
 
