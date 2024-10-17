@@ -27,18 +27,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/responsive.css">
 </head>
-<body style="height: 10000px;">
+<body>
     <div id="home" class="navId" style="transform: translateY(-50px);"></div>
+    <!-- header -->
     <header>
+        <!-- navbar -->
         <nav class="navbar">
+            <!-- logo -->
             <div class="logo">
                 <a href="#home">Savanstor</a>
             </div>
+            <!-- navbar tag -->
             <div class="navbar-list">
                 <ul class="navbar-items">
                     <a href="#home" class="navbar-link">                        
@@ -57,21 +61,29 @@
                         <li>Kho ảnh</li>
                         <div class="underLine"></div>
                     </a>
-                </ul>
-                
+                    <a href="#photoBadGallery" class="navbar-link">
+                        <li>Kho ảnh dìm</li>
+                        <div class="underLine"></div>
+                    </a>
+                </ul>                
             </div>         
+            <!-- dark light mode -->
             <div class="mode">
                 <label class="switch">
                     <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
                     <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
-                    <input type="checkbox" class="input">
+                    <input type="checkbox" class="checkMode">
                     <span class="slider"></span>
                 </label>
             </div>        
+            <!-- navbar responsive -->
             <i class="fa-solid fa-bars"></i>
             <i class="fa-solid fa-xmark"></i>
         </nav>
+
+        <!-- mobile navbar -->
         <div class="menu">            
+            <!-- menu tag -->
             <ul class="menu-items">
                 <a href="#home" class="menu-link">                        
                     <li>Trang chủ</li>
@@ -89,30 +101,41 @@
                     <li>Kho ảnh</li>
                     <div class="underLine"></div>
                 </a>
+                <a href="#photoBadGallery" class="menu-link">
+                    <li>Kho ảnh dìm</li>
+                    <div class="underLine"></div>
+                </a>
             </ul>
+            <!-- dark light mode -->
             <div class="menu-mode">
                 <label class="switch">
                     <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
                     <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
-                    <input type="checkbox" class="input">
+                    <input type="checkbox" class="checkMode">
                     <span class="slider"></span>
                 </label>
             </div>  
         </div>   
     </header>    
+
+    <!-- container -->
     <div class="container">
+        <!-- home -->
         <section class="hero">
             <!-- left -->
             <div class="hero__left">
+                <!-- content -->
                 <div class="hero__content">
                     <h2 class="hero__heading">Xin chào, chúng tớ là <span>Savanstor</span></h2>
                     <p class="hero__desc">Chúng tôi, 12 con người với cá tính riêng, gắn kết qua những kỷ niệm ngọt ngào thời cấp 3. Cùng học, cùng chơi, cùng chia sẻ, tạo nên những khoảnh khắc đáng nhớ.</p>
                 </div>
+                <!-- social -->
                 <div class="hero__social">
                     <a href="https://www.facebook.com/people/Savanstor/61567011726262/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://discord.gg/w7av6g8P" target="_blank"><i class="fa-brands fa-discord"></i></a>
                 </div>
             </div>
+
             <!-- right -->
             <div class="hero__right">
                 <div class="panel panelActive" style="background-image: url(./img/savanstor.svg);">
@@ -132,70 +155,89 @@
                 </div>
             </div>
         </section>
+
+        <!-- member -->
         <section class="member" id="member">
+            <!-- heading -->
             <h2 class="member__h2">Chúng tôi</h2>    
+
+            <!-- member list -->
             <div class="member-list">
+                <!-- dtai -->
                 <a href="#!" class="member-link">
-                    <img src="./img/dtai.svg" alt="">
+                    <img src="./img/dtai.svg">
                     <h3 class="member__heading">Bùi Đức Tài</h3>
                     <p class="member__desc">25/06/2008</p>
                 </a>
+                <!-- bhan -->
                 <a href="#!" class="member-link">
-                    <img src="./img/bhan.svg" alt="">
+                    <img src="./img/bhan.svg">
                     <h3 class="member__heading">La Nguyễn Bảo Hân</h3>
                     <p class="member__desc">22/04/2008</p>
                 </a>
+                <!-- mduyen -->
                 <a href="#!" class="member-link">
-                    <img src="./img/duyen.svg" alt="">
+                    <img src="./img/mduyen.svg">
                     <h3 class="member__heading">Phan Ngọc Mỹ Duyên</h3>
-                    <p class="member__desc">19/05/2008</p>
+                    <p class="member__desc">17/05/2008</p>
                 </a>
+                <!-- xnguyen -->
                 <a href="#!" class="member-link">
-                    <img src="./img/xn.svg" alt="">
+                    <img src="./img/xn.svg">
                     <h3 class="member__heading">Mai Xuân Nguyên</h3>
                     <p class="member__desc">26/10/2008</p>
                 </a>
+                <!-- phanh -->
                 <a href="#!" class="member-link">
-                    <img src="./img/phanh.svg" alt="">
+                    <img src="./img/phanh.svg">
                     <h3 class="member__heading">Phạm Thị Phương Anh</h3>
                     <p class="member__desc">14/09/2008</p>
                 </a>
+                <!-- ttruong -->
                 <a href="#!" class="member-link">
-                    <img src="./img/truong.svg" alt="">
+                    <img src="./img/truong.svg">
                     <h3 class="member__heading">Nguyễn Thế Trường</h3>
                     <p class="member__desc">09/09/2008</p>
                 </a>
+                <!-- ytrang -->
                 <a href="#!" class="member-link">
-                    <img src="./img/trang.svg" alt="">
+                    <img src="./img/ytrang.svg">
                     <h3 class="member__heading">Vũ Thị Yến Trang</h3>
                     <p class="member__desc">30/11/2008</p>
                 </a>
+                <!-- tphuc -->
                 <a href="#!" class="member-link">
-                    <img src="./img/phuc.svg" alt="">
+                    <img src="./img/phuc.svg">
                     <h3 class="member__heading">Nguyễn Hồ Thiên Phúc</h3>
                     <p class="member__desc">17/7/2008</p>
                 </a>
+                <!-- hvy -->
                 <a href="#!" class="member-link">
-                    <img src="./img/vy.svg" alt="">
+                    <img src="./img/vy.svg">
                     <h3 class="member__heading">Nguyễn Thị Hạ Vy</h3>
                     <p class="member__desc">02/09/2008</p>
                 </a>
+                <!-- nhan -->
                 <a href="#!" class="member-link">
-                    <img src="./img/nhan.svg" alt="">
+                    <img src="./img/nhan.svg">
                     <h3 class="member__heading">Lê Ngọc Hân</h3>
                     <p class="member__desc">04/11/2008</p>
                 </a>
+                <!-- tloan -->
                 <a href="#!" class="member-link">
-                    <img src="./img/loan.svg" alt="">
+                    <img src="./img/loan.svg">
                     <h3 class="member__heading">Đỗ Trúc Loan</h3>
-                    <p class="member__desc">28/08/2008</p>
+                    <p class="member__desc">18/08/2008</p>
                 </a>
+                <!-- ctu -->
                 <a href="#!" class="member-link">
-                    <img src="./img/ctu.svg" alt="">
+                    <img src="./img/ctu.svg">
                     <h3 class="member__heading">Dương Chí Tú</h3>
                     <p class="member__desc">28/01/2008</p>
                 </a>
             </div>
+
+            <!-- prev next -->
             <div class="member__btn">
                 <button class="member__btn--left">
                     <i class="fa-solid fa-angle-left"></i>
@@ -205,6 +247,206 @@
                 </button>
             </div>
         </section>
+
+        <!-- member about -->
+        <article>
+            <!-- dtai -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://discord.com/invite/cjYX9jjH" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- bhan -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/bhan.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Xin chào, mình tên là La Nguyễn Bảo Hân, sinh ngày 22/04/2008. Mình thích đánh bóng chuyền, cầu lông, nhảy múa và hát. Mình có sở trường về múa, hát, vẽ và diễn xuất. Với tính cách hòa đồng, năng động và tích cực, mình luôn sẵn sàng tham gia các hoạt động tập thể và chia sẻ niềm vui cùng mọi người.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/callmecut.08" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/apr_bhwb" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.threads.net/@apr_bhwb" target="_blank"><i class="fa-brands fa-threads"></i></a>                        
+                        <a href="https://www.tiktok.com/@apr_bhwb.08" target="_blank"><i class="fa-brands fa-tiktok"></i></a>                        
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- mduyen -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/mduyen.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci at optio nisi et explicabo, quae inventore quas aspernatur praesentium, exercitationem illo nihil accusamus eaque eius hic, suscipit beatae pariatur eligendi ducimus omnis! Earum quasi blanditiis doloremque veniam non! Quod, cum.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100070360956196" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- xnguyen -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- phanh -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- ttruong -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- ytrang -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/ytrang.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Tớ là Yến Trang,sở thích của tớ là ăn và ngủ , tớ cũng thích chơi thể thao cùng với các bạn của tớ , tớ có những người bạn rất thân,tụi tớ đã chơi với nhau được 1 năm rồi và có những kỷ niệm đáng nhớ , nếu các cậu yêu thích tui tớ thì hay theo dõi tụi tớ nha và tụi tớ là Savanstor</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100070615363683" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/_yne_chanie" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://locket.camera/links/3JSptEiA3BiPcug27" target="_blank"><i class="fa-solid fa-lock"></i></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- tphuc -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- hvy -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- nhan -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- tloan -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>            
+            <!-- ctu -->
+            <div class="member-about">
+                <div class="about-img">
+                    <img src="./img/dtai.svg">
+                </div>
+                <div class="about-content">
+                    <p class="about__desc">Chào mọi người! Tôi là một người yêu thích học hỏi và khám phá. Tôi đam mê lập trình và thích đi phượt để trải nghiệm những điều mới mẻ. Tôi luôn tìm kiếm cơ hội để sáng tạo và chia sẻ kỷ niệm với bạn bè.</p>
+                    <div class="about__social">
+                        <a href="https://www.facebook.com/profile.php?id=100081073364141" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/miz_coder/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <button class="about__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>            
+        </article>
     </div>
     <script src="./assets/main.js"></script>
 </body>

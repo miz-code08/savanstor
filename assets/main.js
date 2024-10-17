@@ -1,6 +1,6 @@
 window.onload = function() {
     const underLine = document.querySelectorAll(`.underLine`);
-    const navLink = document.querySelectorAll(`.navbar-link`);
+    const navLinks = document.querySelectorAll(`.navbar-link`);
     const navId = document.querySelectorAll(`.navId`);
     const panel = document.querySelectorAll(`.panel`);
 
@@ -9,20 +9,39 @@ window.onload = function() {
     const menuBtnClose = document.querySelector(`.fa-xmark`);
     const menuLinks = document.querySelectorAll(`.menu-link`);
     let menuCntSlide = 0;
-    let menuTimeSlide = 10000;
+    let menuTimeSlide = 8000;
+
+    const mode = document.querySelectorAll(`.checkMode`);
+    let modeCnt = 0;
 
     const memberLinks = document.querySelectorAll(`.member-link`);
     const memberBtnLeft = document.querySelector(`.member__btn--left`);
     const memberBtnRight = document.querySelector(`.member__btn--right`);
     let memberCnt = 1;
-
-
     let memberTimeSlide = 5000;
     let memberTimeWait = 0;
-    
+
+    const about = document.querySelectorAll(`.member-about`);
+    const aboutClose = document.querySelectorAll(`.about__close`);
+
+    // dark light mode 
+    mode.forEach((val, idx) => {
+        val.addEventListener("change", () => {
+            if(val.checked) {
+                mode.forEach(e => { e.checked = true; });
+                document.body.style.background = 'var(--dark-bg)';
+                document.body.style.color = 'var(--dark-text)';
+            }
+            else {
+                mode.forEach(e => { e.checked = false; });
+                document.body.style.background = 'var(--light-bg)';
+                document.body.style.color = 'var(--light-text)';
+            }
+        });
+    });
 
     // under thanh navbar
-    navLink.forEach((val, idx) => {
+    navLinks.forEach((val, idx) => {
         val.addEventListener("mouseenter", () => {
             underLine[idx].style.opacity = "1";            
         });
@@ -87,36 +106,30 @@ window.onload = function() {
 
     // chạy member slide bằng nút bấm
     memberBtnRight.addEventListener("click", () => {
-        if(memberCnt + 2 < memberLinks.length) {
-            memberCnt++;
-            memberTranslate();
-            memberSlideWait();
+        memberCnt++;
+        if(window.innerWidth <= 767.98) {
+            if(memberCnt >= memberLinks.length + 1) 
+                memberCnt = 1;
+        } 
+        else {
+            if(memberCnt + 1 >= memberLinks.length) 
+                memberCnt = 1;
         }
-        else if (window.innerWidth <= 767.98) {
-            if(memberCnt < memberLinks.length) {
-                memberCnt++;
-                memberTranslate();
-                memberSlideWait();
-            }
-        }
+        memberTranslate();
+        memberSlideWait();
     });
 
     memberBtnLeft.addEventListener("click", () => {
-        if(memberCnt - 1 > 0) {
-            memberCnt--;
-            memberTranslate();
-            memberSlideWait();
+        memberCnt--;
+        if(memberCnt === 0) {
+            if(window.innerWidth <= 767.98)
+                memberCnt = memberLinks.length;
+            else
+            memberCnt = memberLinks.length - 2;
         }
+        memberTranslate();
+        memberSlideWait();
     });
-
-    // chuyển động của slide
-    function memberTranslate() {
-        memberLinks.forEach(val => {
-            let translate = (memberCnt - 1) * 100;
-            console.log(translate, 20 * (memberCnt - 1));
-            val.style.translate = `calc(-${translate}% - ${20 * (memberCnt - 1)}px)`;
-        });
-    };
 
     // chạy member slide auto
     setInterval(memberAutoSlide, memberTimeSlide);
@@ -130,6 +143,14 @@ window.onload = function() {
         }
     }
 
+    // chuyển động của slide
+    function memberTranslate() {
+        memberLinks.forEach(val => {
+            let translate = (memberCnt - 1) * 100;
+            val.style.translate = `calc(-${translate}% - ${20 * (memberCnt - 1)}px)`;
+        });
+    };
+
     // dừng slide 15s
     function memberSlideWait() {
         memberTimeWait = 1;
@@ -137,4 +158,26 @@ window.onload = function() {
             memberTimeWait = 0;
         }, 15000);
     };
+
+    // hiện about
+    memberLinks.forEach((val, idx) => {
+        val.addEventListener("click", () => {
+            about[idx].style.display = "flex";
+            memberTimeWait = 1;
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape") {
+                    about[idx].style.display = "none";
+                }
+            });
+        });
+    });
+
+    // tắt about
+    aboutClose.forEach((val, idx) => {
+        val.addEventListener("click", () => {
+            about[idx].style.display = "none";
+            memberTimeWait = 0;
+        });
+    });
+
 };
