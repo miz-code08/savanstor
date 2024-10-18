@@ -8,11 +8,8 @@ window.onload = function() {
     const menuBtn = document.querySelector(`.fa-bars`);
     const menuBtnClose = document.querySelector(`.fa-xmark`);
     const menuLinks = document.querySelectorAll(`.menu-link`);
-    let menuCntSlide = 0;
-    let menuTimeSlide = 8000;
 
     const mode = document.querySelectorAll(`.checkMode`);
-    let modeCnt = 0;
 
     const memberLinks = document.querySelectorAll(`.member-link`);
     const memberBtnLeft = document.querySelector(`.member__btn--left`);
@@ -55,7 +52,6 @@ window.onload = function() {
         val.addEventListener("click", () => {
             removePanelActive();
             val.classList.add("panelActive");
-            menuCntSlide = idx;
         });
     });
 
@@ -64,22 +60,6 @@ window.onload = function() {
             val.classList.remove("panelActive");
         }) 
     }
-
-    // chạy slide ảnh home
-    // if (window.innerWidth >= 768) 
-    //     setInterval(menuAutoSlide, menuTimeSlide)    
-
-    // function menuAutoSlide() {
-    //     panel.forEach(val => val.addEventListener("click", () => {
-    //         return;
-    //     }));
-    //     menuCntSlide++;
-    //     if(menuCntSlide > panel.length - 1)
-    //         menuCntSlide = 0;
-    //     removePanelActive();
-    //     panel[menuCntSlide].classList.add("panelActive");
-    // }
-
     // mở đóng menu
     menuBtn.addEventListener("click", () => {
         menu.style.opacity = "1";

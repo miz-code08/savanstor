@@ -1,12 +1,12 @@
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -96,7 +96,7 @@ img {
 }
 
 .navbar-link:hover {
-    color: #5d5d5d;
+    /* color: #5d5d5d; */
     scale: 0.9;
     transition: 0.2s;
 }
@@ -110,7 +110,7 @@ img {
     bottom: -5px;
     height: 2px;
     width: 100%; 
-    background-color: #5d5d5d; 
+    background-color: #000; 
     transition: 0.1s;
     opacity: 0;
 }
