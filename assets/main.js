@@ -66,19 +66,19 @@ window.onload = function() {
     }
 
     // chạy slide ảnh home
-    if (window.innerWidth >= 768) 
-        setInterval(menuAutoSlide, menuTimeSlide)    
+    // if (window.innerWidth >= 768) 
+    //     setInterval(menuAutoSlide, menuTimeSlide)    
 
-    function menuAutoSlide() {
-        panel.forEach(val => val.addEventListener("click", () => {
-            return;
-        }));
-        menuCntSlide++;
-        if(menuCntSlide > panel.length - 1)
-            menuCntSlide = 0;
-        removePanelActive();
-        panel[menuCntSlide].classList.add("panelActive");
-    }
+    // function menuAutoSlide() {
+    //     panel.forEach(val => val.addEventListener("click", () => {
+    //         return;
+    //     }));
+    //     menuCntSlide++;
+    //     if(menuCntSlide > panel.length - 1)
+    //         menuCntSlide = 0;
+    //     removePanelActive();
+    //     panel[menuCntSlide].classList.add("panelActive");
+    // }
 
     // mở đóng menu
     menuBtn.addEventListener("click", () => {

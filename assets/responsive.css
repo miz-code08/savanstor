@@ -35,9 +35,22 @@
     .member-link {
         min-width: 100%;
     }
+
+    .member-about {
+        flex-direction: column;
+    }
+
+    .about-img {
+        width: 70%;
+    }
+
+    .about-content {
+        width: 90%;
+        margin: 0;
+    }
 }
 /* tablet */
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 999.98px) {
     .hero {
         flex-direction: column-reverse;
     }
@@ -68,6 +81,6 @@
 
 /* pc */
 
-@media  (min-width: 992px) {
+@media  (min-width: 1000px) {
     
 }
