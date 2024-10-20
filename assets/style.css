@@ -29,6 +29,7 @@ html {
 body {
     background: var(--light-bg);
     color: var(--light-text);
+    overflow: auto;
 }
 
 li {
@@ -52,6 +53,16 @@ img {
     width: 1170px;
     max-width: calc(100% - 48px);
     margin: 0 auto;
+}
+
+.maybay {
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    bottom: 20px;
+
+    width: 30px;
+    cursor: pointer;
 }
 /* =================================================HEADER================================================= */
 .navbar {
@@ -339,7 +350,7 @@ img {
 }
 /* =================================================MEMBER================================================= */
 .member {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 .member__h2 {
@@ -349,7 +360,7 @@ img {
 }
 
 .member-list {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     gap: 20px;
 
@@ -492,4 +503,43 @@ img {
 
 .about__close i {
     display: block;
+}
+/* =================================================PHOTO================================================= */
+#photoGallery {
+    padding-top: 80px;
+}
+
+.photo {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.photo__heading {
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.photo-folder {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 1; */
+
+    height: 250px;
+    border-radius: 30px;
+    font-size: 3rem;
+    transition: 0.2s;
+
+    background-color: #A77DFF;
+    box-shadow: 10px 10px 33px -12px #A77DFF;
+    -webkit-box-shadow: 10px 10px 33px -12px #A77DFF;
+    -moz-box-shadow: 10px 10px 33px -12px #A77DFF;
+}
+
+.photo-folder:hover {
+    scale: 0.9;
 }

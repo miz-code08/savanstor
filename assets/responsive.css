@@ -22,6 +22,10 @@
         display: none;
     }
 
+    .panel:first-child {
+        display: block;
+    }
+
     .hero__left {
         width: 100%;
         margin-top: 30px;
@@ -47,6 +51,12 @@
     .about-content {
         width: 90%;
         margin: 0;
+    }
+
+    .photo {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        margin: 0 auto;
     }
 }
 /* tablet */
@@ -77,10 +87,8 @@
     .member__desc {
         font-size: 2rem;
     }
-}
 
-/* pc */
-
-@media  (min-width: 1000px) {
-    
+    .photo {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

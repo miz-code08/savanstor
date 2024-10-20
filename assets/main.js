@@ -1,4 +1,6 @@
 window.onload = function() {
+    const mayBay = document.querySelector(`.maybay`);
+
     const underLine = document.querySelectorAll(`.underLine`);
     const navLinks = document.querySelectorAll(`.navbar-link`);
     const navId = document.querySelectorAll(`.navId`);
@@ -20,6 +22,11 @@ window.onload = function() {
 
     const about = document.querySelectorAll(`.member-about`);
     const aboutClose = document.querySelectorAll(`.about__close`);
+
+    // cuộn tới đầu trang
+    mayBay.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+    });
 
     // dark light mode 
     mode.forEach((val, idx) => {
@@ -145,10 +152,10 @@ window.onload = function() {
             about[idx].style.display = "flex";
             memberTimeWait = 1;
             document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape") {
+                if (event.key === "Escape")
                     about[idx].style.display = "none";
-                }
             });
+            document.body.style.overflow = 'hidden';
         });
     });
 
@@ -157,6 +164,7 @@ window.onload = function() {
         val.addEventListener("click", () => {
             about[idx].style.display = "none";
             memberTimeWait = 0;
+            document.body.style.overflow = 'auto';
         });
     });
 
