@@ -1,5 +1,6 @@
 window.onload = function() {
     const mayBay = document.querySelector(`.maybay`);
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const underLine = document.querySelectorAll(`.underLine`);
     const navLinks = document.querySelectorAll(`.navbar-link`);
@@ -29,6 +30,15 @@ window.onload = function() {
     });
 
     // dark light mode 
+    if (darkModeMediaQuery.matches) {
+        mode.forEach(val => {
+            val.checked = true;
+            mode.forEach(e => { e.checked = true; });
+            document.body.style.background = 'var(--dark-bg)';
+            document.body.style.color = 'var(--dark-text)';
+        });
+    }
+
     mode.forEach((val, idx) => {
         val.addEventListener("change", () => {
             if(val.checked) {
@@ -94,25 +104,21 @@ window.onload = function() {
     // chạy member slide bằng nút bấm
     memberBtnRight.addEventListener("click", () => {
         memberCnt++;
-        if(window.innerWidth <= 767.98) {
-            if(memberCnt >= memberLinks.length + 1) 
-                memberCnt = 1;
-        } 
-        else {
-            if(memberCnt + 1 >= memberLinks.length) 
-                memberCnt = 1;
-        }
         memberTranslate();
         memberSlideWait();
     });
 
     memberBtnLeft.addEventListener("click", () => {
         memberCnt--;
-        if(memberCnt === 0) {
-            if(window.innerWidth <= 767.98)
-                memberCnt = memberLinks.length;
-            else
-            memberCnt = memberLinks.length - 2;
+        memberTranslate();
+        memberSlideWait();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            memberCnt--;
+        } else if (e.key === "ArrowRight") {
+            memberCnt++;
         }
         memberTranslate();
         memberSlideWait();
@@ -132,6 +138,20 @@ window.onload = function() {
 
     // chuyển động của slide
     function memberTranslate() {
+        if(window.innerWidth <= 767.98) {
+            if(memberCnt >= memberLinks.length + 1) 
+                memberCnt = 1;
+        } 
+        else {
+            if(memberCnt + 1 >= memberLinks.length) 
+                memberCnt = 1;
+        }
+        if(memberCnt === 0) {
+            if(window.innerWidth <= 767.98)
+                memberCnt = memberLinks.length;
+            else
+            memberCnt = memberLinks.length - 2;
+        }
         memberLinks.forEach(val => {
             let translate = (memberCnt - 1) * 100;
             val.style.translate = `calc(-${translate}% - ${20 * (memberCnt - 1)}px)`;
