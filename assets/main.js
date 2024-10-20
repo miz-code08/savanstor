@@ -1,44 +1,49 @@
+const mayBay = document.querySelector(`.maybay`);
+const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+const underLine = document.querySelectorAll(`.underLine`);
+const navLinks = document.querySelectorAll(`.navbar-link`);
+const navId = document.querySelectorAll(`.navId`);
+const panel = document.querySelectorAll(`.panel`);
+
+const menu = document.querySelector(`.menu`);
+const menuBtn = document.querySelector(`.fa-bars`);
+const menuBtnClose = document.querySelector(`.fa-xmark`);
+const menuLinks = document.querySelectorAll(`.menu-link`);
+
+const mode = document.querySelectorAll(`.checkMode`);
+
+const memberLinks = document.querySelectorAll(`.member-link`);
+const memberBtnLeft = document.querySelector(`.member__btn--left`);
+const memberBtnRight = document.querySelector(`.member__btn--right`);
+let memberCnt = 1;
+let memberTimeSlide = 5000;
+let memberTimeWait = 0;
+
+const about = document.querySelectorAll(`.member-about`);
+const aboutClose = document.querySelectorAll(`.about__close`);
+
+// dark light mode 
+if (darkModeMediaQuery.matches) {
+    mode.forEach(val => {
+        val.checked = true;
+        mode.forEach(e => { e.checked = true; });
+        document.body.style.background = 'var(--dark-bg)';
+        document.body.style.color = 'var(--dark-text)';
+    });
+}
+
+// nếu load tất cả xong
 window.onload = function() {
-    const mayBay = document.querySelector(`.maybay`);
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const underLine = document.querySelectorAll(`.underLine`);
-    const navLinks = document.querySelectorAll(`.navbar-link`);
-    const navId = document.querySelectorAll(`.navId`);
-    const panel = document.querySelectorAll(`.panel`);
-
-    const menu = document.querySelector(`.menu`);
-    const menuBtn = document.querySelector(`.fa-bars`);
-    const menuBtnClose = document.querySelector(`.fa-xmark`);
-    const menuLinks = document.querySelectorAll(`.menu-link`);
-
-    const mode = document.querySelectorAll(`.checkMode`);
-
-    const memberLinks = document.querySelectorAll(`.member-link`);
-    const memberBtnLeft = document.querySelector(`.member__btn--left`);
-    const memberBtnRight = document.querySelector(`.member__btn--right`);
-    let memberCnt = 1;
-    let memberTimeSlide = 5000;
-    let memberTimeWait = 0;
-
-    const about = document.querySelectorAll(`.member-about`);
-    const aboutClose = document.querySelectorAll(`.about__close`);
-
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(`header`).style.display = "block";
+    document.querySelector(`.container`).style.display = "block";
     // cuộn tới đầu trang
     mayBay.addEventListener("click", () => {
         window.scrollTo(0, 0);
     });
 
-    // dark light mode 
-    if (darkModeMediaQuery.matches) {
-        mode.forEach(val => {
-            val.checked = true;
-            mode.forEach(e => { e.checked = true; });
-            document.body.style.background = 'var(--dark-bg)';
-            document.body.style.color = 'var(--dark-text)';
-        });
-    }
-
+    // dark light mode
     mode.forEach((val, idx) => {
         val.addEventListener("change", () => {
             if(val.checked) {
@@ -172,8 +177,10 @@ window.onload = function() {
             about[idx].style.display = "flex";
             memberTimeWait = 1;
             document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape")
+                if (event.key === "Escape") {
+                    document.body.style.overflow = 'auto';
                     about[idx].style.display = "none";
+                }
             });
             document.body.style.overflow = 'hidden';
         });
@@ -187,5 +194,4 @@ window.onload = function() {
             document.body.style.overflow = 'auto';
         });
     });
-
 };

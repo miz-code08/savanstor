@@ -1,11 +1,16 @@
+const mayBay = document.querySelector(`.maybay`);
+
+const download = document.querySelectorAll(`.fa-download`);
+const image = document.querySelectorAll(`.imgDownload`);
+
+let imageUrl;
+let fileName;
+
+// nếu load tất cả xong
 window.onload = function() {
-    const mayBay = document.querySelector(`.maybay`);
-
-    const download = document.querySelectorAll(`.fa-download`);
-    const image = document.querySelectorAll(`.imgDownload`);
-
-    let imageUrl;
-    let fileName;
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(`header`).style.display = "block";
+    document.querySelector(`.container`).style.display = "grid";    
 
     // cuộn tới đầu trang
     mayBay.addEventListener("click", () => {
