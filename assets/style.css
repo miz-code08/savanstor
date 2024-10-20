@@ -129,8 +129,7 @@ img {
 .menu {
     position: fixed;
     right: 0;
-    top: 0;
-    top: 90px;
+    top: 95px;
     z-index: 2;
 
     font-size: 2rem;
@@ -151,6 +150,8 @@ img {
     display: none;
     cursor: pointer;
     font-size: 3rem;
+    padding: 5px;
+    /* margin-left:auto; */
 }
 /* =================================================MODE================================================= */
 .switch {
