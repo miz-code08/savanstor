@@ -1,6 +1,14 @@
 const mayBay = document.querySelector(`.maybay`);
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
+const fb = document.querySelectorAll(`.fb-link`);
+const ins = document.querySelectorAll(`.ins-link`);
+const tik = document.querySelectorAll(`.tik-link`);
+const lock = document.querySelectorAll(`.lock-link`);
+const thread = document.querySelectorAll(`.thread-link`);
+let url; 
+let id;
+
 const underLine = document.querySelectorAll(`.underLine`);
 const navLinks = document.querySelectorAll(`.navbar-link`);
 const navId = document.querySelectorAll(`.navId`);
@@ -32,6 +40,26 @@ if (darkModeMediaQuery.matches) {
         document.body.style.color = 'var(--dark-text)';
     });
 }
+
+// mở app trên mobile
+if(window.innerWidth <= 767.98) {
+    fb.forEach((val, idx) => {
+        val.addEventListener("click", (e) => {
+            e.preventDefault();
+            url = val.getAttribute("href");
+            if (url.includes("id=")) {
+                id = url.split("id=")[1];
+            } else {
+                let parts = url.split("/");
+                id = parts[parts.length - 1];
+            }
+            window.open(`fb://profile/${id}`, "_blank");
+            console.log(1);
+        });
+    });
+} 
+
+
 
 // nếu load tất cả xong
 window.onload = function() {
