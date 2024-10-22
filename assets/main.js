@@ -47,16 +47,24 @@ if(window.innerWidth <= 767.98) {
         val.addEventListener("click", (e) => {
             e.preventDefault();
             url = val.getAttribute("href");
-            if (url.includes("id=")) {
-                id = url.split("id=")[1];
-            } else {
-                let parts = url.split("/");
-                id = parts[parts.length - 1];
-            }
+            id = url.split("id=")[1];
             window.open(`fb://profile/${id}`, "_blank");
             console.log(1);
         });
     });
+
+    ins.forEach((val, idx) => {
+        val.addEventListener("click", (e) => {
+            e.preventDefault();
+            url = val.getAttribute("href");
+            id = url.split('/')[4];
+            window.open(`fb://profile/${id}`, "_blank");
+            window.open(`instagram://user?username=${id}`, "_blank");
+            console.log(1);
+        });
+    });
+
+    
 } 
 
 
