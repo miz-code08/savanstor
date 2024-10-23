@@ -58,6 +58,16 @@
         width: 80vw;
         margin: 0 auto;
     }
+
+    .photoBad {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .lock-input {
+        width: 80%;
+    }
 }
 /* tablet */
 @media (min-width: 768px) and (max-width: 999.98px) {
@@ -90,5 +100,13 @@
 
     .photo {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .photoBad {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .lock-input {
+        width: 60%;
     }
 }

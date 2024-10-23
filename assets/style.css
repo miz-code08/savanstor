@@ -91,6 +91,10 @@ header,
     background: var(--dark-bg);
 }
 
+.lock-loading {
+    display: none;
+}
+
 .imgloading {
     width: 150px;
     height: 150px;
@@ -559,24 +563,28 @@ header,
     display: block;
 }
 /* =================================================PHOTO================================================= */
-#photoGallery {
-    padding-top: 80px;
+#photoGallery,
+#photoBadGallery {
+    padding-top: 100px;
 }
 
-.photo {
+.photo,
+.photoBad {
     min-height: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.photo__heading {
+.photo__heading,
+.photoBad__heading {
     font-size: 5rem;
     font-weight: 600;
     text-align: center;
 }
 
-.photo-folder {
+.photo-folder,
+.photoBad-folder {
     display: block;
     display: flex;
     align-items: center;
@@ -594,6 +602,88 @@ header,
     -moz-box-shadow: 10px 10px 33px -12px #A77DFF;
 }
 
-.photo-folder:hover {
+.photo-folder:hover,
+.photoBad-folder:hover {
     scale: 0.9;
 }
+/* =================================================PHOTO BAD================================================= */
+.photoBad {
+    margin-top: 50px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+.photoBad-folder {
+    height: 150px;
+}
+
+.lock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 50px;
+}
+
+.lock-input {
+    width: 30%;
+    height: 45px;
+
+    line-height: 30px;
+    padding: 0 5rem;
+    padding-left: 3rem;
+    
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+
+    background: #c1e0ff;
+    color: #000;
+    transition: .5s ease;
+}
+
+.lock-input::placeholder {
+    color: inherit;
+}
+
+.lock-input:focus, .lock-input:hover {
+    outline: none;
+    border-color: rgba(129, 140, 248);
+    background-color: #fff;
+    box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
+
+.comic-button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5252;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.comic-button:hover {
+    background-color: #fff;
+    color: #ff5252;
+    border: 2px solid #ff5252;
+    box-shadow: 5px 5px 0px #ff5252;
+}
+
+.comic-button:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.photoBad {
+    display: none;
+}
+

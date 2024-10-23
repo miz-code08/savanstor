@@ -28,6 +28,9 @@ let memberTimeWait = 0;
 const about = document.querySelectorAll(`.member-about`);
 const aboutClose = document.querySelectorAll(`.about__close`);
 
+const lockInput = document.querySelector(`.lock-input`);
+const lockBtn = document.querySelector(`.comic-button`);
+
 // dark light mode 
 if (darkModeMediaQuery.matches) {
     mode.forEach(val => {
@@ -242,4 +245,33 @@ window.onload = function() {
             document.body.style.overflow = 'auto';
         });
     });
+
+    // check mật khẩu để mở kho ảnh dìm
+    document.addEventListener("keydown", (e) => {
+        if (lockInput === document.activeElement && e.key === "Enter") {
+            lockSubmit();
+        }
+    });    
+    lockBtn.addEventListener("click", lockSubmit);
+
+    function lockSubmit() {
+        const inputValue = lockInput.value;
+        
+        if(inputValue === "satvuc180923") {
+            document.querySelector(".lock-loading").style.display = "block";
+            // document.querySelector(`header`).style.display = "none";
+            // document.querySelector(`.container`).style.display = "none";
+            setTimeout(() => {
+                document.querySelector('.photoBad').style.display = "grid";
+                document.querySelector('.lock').style.display = "none";
+            }, 1500);                        
+        }
+        else {
+            lockInput.value = "";
+            lockInput.style.background = "#d03434";
+            lockInput.style.color = "#fff";
+            lockInput.placeholder = "Mật khẩu sai, vui lòng nhập lại";
+            lockInput.focus();
+        }
+    };
 };
