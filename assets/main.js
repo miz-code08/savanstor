@@ -73,13 +73,12 @@ function getUrl(e, val) {
 }
 
 function openApp(webUrl, appUrl) {
-    let start = Date.now();
     window.location = appUrl;
     setTimeout(() => {
-        if (Date.now() - start < 1000) {
+        if (document.visibilityState === 'visible') {
             window.location = webUrl;
         }
-    }, 1000);
+    }, 3000);
 }
 
 // nếu load tất cả xong
