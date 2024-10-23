@@ -3,11 +3,8 @@ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 const fb = document.querySelectorAll(`.fb-link`);
 const ins = document.querySelectorAll(`.ins-link`);
-const tik = document.querySelectorAll(`.tik-link`);
-const lock = document.querySelectorAll(`.lock-link`);
 const thread = document.querySelectorAll(`.thread-link`);
-let url; 
-let id;
+let webUrl, id, appUrl;
 
 const underLine = document.querySelectorAll(`.underLine`);
 const navLinks = document.querySelectorAll(`.navbar-link`);
@@ -41,39 +38,54 @@ if (darkModeMediaQuery.matches) {
     });
 }
 
-// mở app trên mobile
-if(window.innerWidth <= 767.98) {
+// mở app trên mobile nếu có
+if (/iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     fb.forEach((val, idx) => {
         val.addEventListener("click", (e) => {
-            e.preventDefault();
-            url = val.getAttribute("href");
-            id = url.split("id=")[1];
-            window.open(`fb://profile/${id}`, "_blank");
-            console.log(1);
+            getUrl(e, val);
+            appUrl = `fb://profile/${id}`;
+            openApp(webUrl, appUrl)
         });
     });
-
     ins.forEach((val, idx) => {
         val.addEventListener("click", (e) => {
-            e.preventDefault();
-            url = val.getAttribute("href");
-            id = url.split('/')[4];
-            window.open(`fb://profile/${id}`, "_blank");
-            window.open(`instagram://user?username=${id}`, "_blank");
-            console.log(1);
+            getUrl(e, val);
+            appUrl = `instagram://user?username=${id}`;
+            openApp(webUrl, appUrl)
         });
     });
+    thread.forEach((val, idx) => {
+        val.addEventListener("click", (e) => {
+            getUrl(e, val);
+            appUrl = `threads://user?username=${id}`;
+            openApp(webUrl, appUrl)
+        });
+    });
+}
 
-    
-} 
+function getUrl(e, val) {
+    e.preventDefault();
+    webUrl = val.getAttribute("href");
+    id = webUrl.includes("id=") ? webUrl.split("id=")[1] : webUrl.split('/')[3];
+}
 
-
+function openApp(webUrl, appUrl) {
+    let start = Date.now();
+    window.location = appUrl;
+    setTimeout(() => {
+        if (Date.now() - start < 1000) {
+            window.location = webUrl;
+        }
+    }, 1000);
+}
 
 // nếu load tất cả xong
 window.onload = function() {
+    // ẩn loading
     document.querySelector(".loading").style.display = "none";
     document.querySelector(`header`).style.display = "block";
     document.querySelector(`.container`).style.display = "block";
+
     // cuộn tới đầu trang
     mayBay.addEventListener("click", () => {
         window.scrollTo(0, 0);

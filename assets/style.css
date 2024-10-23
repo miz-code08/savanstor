@@ -529,11 +529,11 @@ header,
 
 .about__social i:hover {
     scale: 1.1;
-    /* color: var(--color-hover); */
+    /* color: var(--color-hover);
     background: var(--color-hover);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent; */
 }
 
 .about__social i:active {
