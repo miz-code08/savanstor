@@ -49,6 +49,10 @@ img {
     width: 100%;
 }
 
+button {
+    touch-action: manipulation;
+}
+/* ================================================= ================================================= */
 .container {
     width: 1170px;
     max-width: calc(100% - 48px);
