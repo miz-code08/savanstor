@@ -483,8 +483,7 @@ header,
 .member__btn--right:active {
     scale: 0.9;
 }
-
-
+/* =================================================MEMBER ABOUT================================================= */
 .member-about {
     position: fixed;
     z-index: 4;
@@ -537,11 +536,6 @@ header,
 
 .about__social i:hover {
     scale: 1.1;
-    /* color: var(--color-hover);
-    background: var(--color-hover);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; */
 }
 
 .about__social i:active {
@@ -561,6 +555,60 @@ header,
 
 .about__close i {
     display: block;
+}
+
+.redirect {
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    display: none;
+    background: #b5deff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.redirect__desc {
+    font-size: 3rem;
+    text-align: center;
+    color: #000;
+}
+
+.redirect__btn {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.redirect__btn button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.redirect__btn button:hover {
+    scale: 1.1;
+}
+
+.redirect__btn button:active {
+    scale: 0.9;
+}
+
+.redirect-x {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
 }
 /* =================================================PHOTO================================================= */
 #photoGallery,
