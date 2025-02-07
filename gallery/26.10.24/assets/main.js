@@ -7,7 +7,7 @@ let imageUrl;
 let fileName;
 
 // nếu load tất cả xong
-window.onload = function() {
+// window.onload = function() {
     document.querySelector(".loading").style.display = "none";
     document.querySelector(`header`).style.display = "block";
     document.querySelector(`.container`).style.display = "grid";    
@@ -47,4 +47,4 @@ window.onload = function() {
             }
         });
     });
-};
+// };

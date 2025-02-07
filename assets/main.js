@@ -45,7 +45,7 @@ if (darkModeMediaQuery.matches) {
 }
 
 // nếu load tất cả xong
-window.onload = function() {
+// window.onload = function() {
     // ẩn loading
     document.querySelector(".loading").style.display = "none";
     document.querySelector(`header`).style.display = "block";
@@ -281,4 +281,4 @@ window.onload = function() {
             lockInput.focus();
         }
     };
-};
+// };
